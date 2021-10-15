@@ -1,0 +1,238 @@
+[colors]
+background = #F52b2122
+background-alt = #444
+foreground = ${xrdb:color7}
+foreground-alt = #555
+primary = ${xrdb:color3}
+secondary = ${xrdb:color5}
+alert = #bd2c40
+col = #00f
+
+[bar/example]
+bottom = true
+monitor = ${env:MONITOR:}
+width = 100%
+height = 24
+radius = 6.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = {$xrdb:color1}
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = SF Mono:pixelsize=12:antialias=true;2
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = HackNerdFont:pixelsize=12;
+font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
+font-4 = Font Awesome 5 Free:pixelsize=10;2
+font-5 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-6 = Font Awesome 5 Brands:pixelsize=10;2
+
+modules-left = i3 bspwm xwindow
+modules-right = pulseaudio battery cpu-usage memory time
+
+tray-position = right
+tray-padding = 0
+
+wm-restack = bspwm
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+format-underline = ${colors.background}
+format-background = ${colors.background}
+format-padding =
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= #0000FF 
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = 
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-background = ${xrdb:color0}
+;label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "🧠 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/cpu-usage]
+type = internal/cpu
+interval = 2
+format-prefix = "💻 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/temperature]
+type = internal/temperature
+interval = 5
+thermal-zone = 0
+warn-temperature = 60
+exec = sensors | awk '/Core 0:/ {print $3}'
+label = "%temperature-c%"
+format-prefix="🔥 "
+format-prefix-foreground = ${colors.foreground-alt}
+format_underline = #f90
+
+[module/time]
+type = custom/script
+exec = date '+%m/%d/ %H:%M'
+click-left = thunderbird &
+label = "%output%"
+interval = 5
+format-underline = #0000FF
+
+[module/wlan]
+type = internal/network
+interface = wlp7s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 📡
+ramp-signal-1 = 📡
+ramp-signal-2 = 📡
+ramp-signal-3 = 📡
+ramp-signal-4 = 📡
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+;format-charging = Charging... <label-charging>
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${xrdb:color3}
+
+;format-discharging = <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+
+format-full-prefix = "💡 "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+
+ramp-capacity-0 = 💡
+ramp-capacity-1 = 💡
+ramp-capacity-2 = 💡
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 💡
+animation-charging-1 = 💡
+animation-charging-2 = 💡
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+; [module/battery]
+; type = custom/script
+; exec = polybattery
+; label = "%output%"
+; interval = 30
+
+; [module/backlight]
+; type = custom/ipc
+; hook-0 = light -G | sed 's/\.[0-9]*//'
+; format-prefix = "💡 "
+; initial = 1
+
+; vim:ft=dosini

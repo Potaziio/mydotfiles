@@ -1,0 +1,52 @@
+env:
+  TERM: alacritty
+  LANG: en_US.UTF-8
+  LC_CTYPE: en_US.UTF-8
+font:
+  normal:
+      family: Source Code Pro Medium
+      style: SemiBold
+  size: 11
+  use_thin_strokes: true
+background_opacity: 1
+colors:
+  name: Default (dark)
+  author: Chris Kempson
+  primary:
+    background: "#000000"
+    foreground: "#FFFFFF"
+  cursor:
+    text: "#FFFFFF"
+    cursor: "#00FF00"
+  normal:
+    black: "#000000"
+    red: "#FF0000"
+    green: "#00FF00"
+    yellow: "#FFFF00"
+    blue: "#FFFFFF"
+    magenta: "#FF00FF"
+    cyan: "#FFFFFF"
+    white: "#FFFFFF"
+  bright:
+    black: "#FF0000"
+    red: "#FF0000"
+    green: "#00FF00"
+    yellow: "#f4bf75"
+    blue: "#0000FF"
+    magenta: "#FF00FF"
+    cyan: "#FF0000"
+    white: "#FFFFFF"
+" ": null
+eaac7" magenta: "#FF00FF"
+cyan: "#00FFFF"
+white: "#FFFFFF"
+dim:
+  black: "#000000"
+  red: "#FF00FF"
+  green: "#00FF00"
+  yellow: "#FFFF00"
+  blue: "#0000FF"
+  magenta: "#FF00FF"
+  cyan: "#00FFFF"
+  white: "#FFFFFF"
+e4962" cyan: "#00FFFF"
