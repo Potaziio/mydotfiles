@@ -1,0 +1,215 @@
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2021 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    # colorscheme = "vim-monokai-tasty"
+    # colorscheme = "PaperColor"
+    colorscheme = "felipec"
+    colorscheme_bg = "dark"
+
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = false
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_iseparator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = true
+
+    disabled_plugins = ["neomake", "coc.nvim"]
+
+    bootstrap_before = "myspacevim#before"
+    bootstrap_after = "myspacevim#after"
+
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "complete"
+auto_completion_tab_key_behavior = "smart"
+
+[[layers]]
+name = 'shell'
+default_position = 'top'
+default_height = 30
+
+# CUSTOM PLUGINS
+
+# [[custom_plugins]]
+#   repo = "severin-lemaignan/vim-minimap"
+#   merged = false
+
+[[custom_plugins]]
+  repo = "marcopaganini/mojave-vim-theme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "srcery-colors/srcery-vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "neoclide/coc.nvim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "agude/vim-eldar"
+  merged = false
+
+[[custom_plugins]]
+  repo = "mg979/vim-studio-dark"
+  merged = false
+
+[[custom_plugins]]
+  repo = "felipec/vim-felipec"
+  merged = false
+
+[[custom_plugins]]
+  repo = "rdnetto/YCM-Generator"
+  merged = false
+
+[[custom_plugins]]
+  repo = "huyvohcmc/atlas.vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "NLKNguyen/papercolor-theme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "altercation/vim-colors-solarized"
+  merged = false
+
+[[custom_plugins]]
+    repo = "vim-scripts/mrkn256.vim"
+    merged = false
+
+[[custom_plugins]]
+   repo = "windwp/nvim-autopairs"
+   merged = false
+
+[[custom_plugins]]
+  repo = "lilydjwg/colorizer"
+  merged = false
+
+[[custom_plugins]]
+  repo = "sheerun/vim-polyglot"
+  merged = false
+
+[[custom_plugins]]
+  repo = "https://github.com/mg979/vim-visual-multi"
+  merged = false
+
+[[custom_plugins]]
+  repo = "https://github.com/tpope/vim-commentary"
+  merged = false
+
+[[custom_plugins]]
+  repo = "SirVer/ultisnips"
+  merged = false
+
+# [[custom_plugins]]
+#   repo = "prabirshrestha/asyncomplete.vim"
+#   merged = false
+
+# [[custom_plugins]]
+#   repo = "andreypopp/asyncomplete-ale.vim"
+#   merged = false
+
+[[custom_plugins]]
+  repo = "dominikduda/vim_current_word"
+  merged = false
+
+[[custom_plugins]]
+  repo = "ycm-core/YouCompleteMe"
+  merged = false
+
+[[custom_plugins]]
+  repo = "hdiniz/vim-gradle"
+  merged = false
+
+[[custom_plugins]]
+  repo = "tpope/vim-fugitive"
+  merged = false
+
+[[custom_plugins]]
+  repo = "vim-syntastic/syntastic"
+  merged = false
+
+[[custom_plugins]]
+  repo = "ilyachur/cmake4vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = 'patstockwell/vim-monokai-tasty'
+  merged = false
+
+
+[[custom_plugins]]
+  repo = "mg979/vim-visual-multi"
+  merged = false
+
+# [[custom_plugins]]
+#   repo = "Yggdroot/indentLine"
+#   merged = false
+
+[[custom_plugins]]
+  repo = "OmniSharp/omnisharp-vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "nickspoons/vim-sharpenup"
+  merged = false
+
+[[custom_plugins]]
+  repo = "google/vim-colorscheme-primary"
+  merged = false
+
+[[custom_plugins]]
+  repo = "broduo/broduo-color-scheme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "sblauen/chalk"
+  merged = false
+
+# [[custom_plugins]]
+#   repo = "justb3a/vim-smarties"
+#   merged = false
+
+[[custom_plugins]]
+  repo = "ghifarit53/tokyonight-vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "nonetallt/vim-neon-dark"
+  merged = false
+
+[[custom_plugins]]
+  repo = "dunstontc/vim-vscode-theme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "tomsik68/vim-crystallite"
+  merged = false
+
+[[custom_plugins]]
+  repo = "tpope/vim-vividchalk"
+  merged = false
+
+[[custom_plugins]]
+  repo = "skammer/vim-css-color"
+  merged = false
+
+[[custom_plugins]]
+  repo = 'Shougo/deoplete.nvim'
+  merged = false
