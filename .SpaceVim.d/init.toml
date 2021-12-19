@@ -11,29 +11,26 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    # colorscheme = "dark_plus"
-
-    colorscheme = "vividchalk"
+    # colorscheme = "vim-monokai-tasty"
+    # colorscheme = "PaperColor"
+    colorscheme = "felipec"
     colorscheme_bg = "dark"
+
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
-    enable_guicolors = true
+    enable_guicolors = false
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
     statusline_separator = "arrow"
-    statusline_iseparator = "bar"
+    statusline_iseparator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true
 
-    disabled_plugins = ["neomake"]
+    disabled_plugins = ["neomake", "coc.nvim"]
 
-    relativenumber = true
-
-    # Bootstrap
     bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
- 
 
 # Enable autocomplete layer
 [[layers]]
@@ -41,65 +38,92 @@ name = 'autocomplete'
 auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "smart"
 
-# Shell Layer
 [[layers]]
 name = 'shell'
 default_position = 'top'
 default_height = 30
 
-#Colorscheme layer
-[[layers]]
-  name = "colorscheme"
-
-#Statusline layer
-[[layers]]
-  name = "core#statusline"
-
 # CUSTOM PLUGINS
 
+# [[custom_plugins]]
+#   repo = "severin-lemaignan/vim-minimap"
+#   merged = false
+
 [[custom_plugins]]
-  repo = "severin-lemaignan/vim-minimap"
-  merged = true
+  repo = "marcopaganini/mojave-vim-theme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "srcery-colors/srcery-vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "neoclide/coc.nvim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "agude/vim-eldar"
+  merged = false
 
 [[custom_plugins]]
   repo = "mg979/vim-studio-dark"
-  merged = true
+  merged = false
+
+[[custom_plugins]]
+  repo = "felipec/vim-felipec"
+  merged = false
 
 [[custom_plugins]]
   repo = "rdnetto/YCM-Generator"
-  merged = true
+  merged = false
 
 [[custom_plugins]]
-  repo = "jiangmiao/auto-pairs"
-  merged = true
+  repo = "huyvohcmc/atlas.vim"
+  merged = false
+
+[[custom_plugins]]
+  repo = "NLKNguyen/papercolor-theme"
+  merged = false
+
+[[custom_plugins]]
+  repo = "altercation/vim-colors-solarized"
+  merged = false
+
+[[custom_plugins]]
+    repo = "vim-scripts/mrkn256.vim"
+    merged = false
+
+[[custom_plugins]]
+   repo = "windwp/nvim-autopairs"
+   merged = false
 
 [[custom_plugins]]
   repo = "lilydjwg/colorizer"
-  merged = true
+  merged = false
 
 [[custom_plugins]]
   repo = "sheerun/vim-polyglot"
-  merged = true
+  merged = false
 
 [[custom_plugins]]
   repo = "https://github.com/mg979/vim-visual-multi"
-  merged = true
- 
+  merged = false
+
 [[custom_plugins]]
   repo = "https://github.com/tpope/vim-commentary"
-  merged = true
+  merged = false
 
 [[custom_plugins]]
   repo = "SirVer/ultisnips"
-  merged = true
-
-[[custom_plugins]]
-  repo = "prabirshrestha/asyncomplete.vim"
-  merged = true
-
-[[custom_plugins]]
-  repo = "andreypopp/asyncomplete-ale.vim"
   merged = false
+
+# [[custom_plugins]]
+#   repo = "prabirshrestha/asyncomplete.vim"
+#   merged = false
+
+# [[custom_plugins]]
+#   repo = "andreypopp/asyncomplete-ale.vim"
+#   merged = false
 
 [[custom_plugins]]
   repo = "dominikduda/vim_current_word"
@@ -107,6 +131,10 @@ default_height = 30
 
 [[custom_plugins]]
   repo = "ycm-core/YouCompleteMe"
+  merged = false
+
+[[custom_plugins]]
+  repo = "hdiniz/vim-gradle"
   merged = false
 
 [[custom_plugins]]
@@ -122,8 +150,17 @@ default_height = 30
   merged = false
 
 [[custom_plugins]]
-  repo = "Yggdroot/indentLine"
+  repo = 'patstockwell/vim-monokai-tasty'
   merged = false
+
+
+[[custom_plugins]]
+  repo = "mg979/vim-visual-multi"
+  merged = false
+
+# [[custom_plugins]]
+#   repo = "Yggdroot/indentLine"
+#   merged = false
 
 [[custom_plugins]]
   repo = "OmniSharp/omnisharp-vim"
@@ -131,10 +168,6 @@ default_height = 30
 
 [[custom_plugins]]
   repo = "nickspoons/vim-sharpenup"
-  merged = false
-
-[[custom_plugins]]
-  repo = "neoclide/coc.nvim"
   merged = false
 
 [[custom_plugins]]
@@ -149,9 +182,9 @@ default_height = 30
   repo = "sblauen/chalk"
   merged = false
 
-[[custom_plugins]]
-  repo = "justb3a/vim-smarties"
-  merged = false
+# [[custom_plugins]]
+#   repo = "justb3a/vim-smarties"
+#   merged = false
 
 [[custom_plugins]]
   repo = "ghifarit53/tokyonight-vim"
@@ -175,6 +208,8 @@ default_height = 30
 
 [[custom_plugins]]
   repo = "skammer/vim-css-color"
-  merged = true
+  merged = false
 
-# --------------------------------------------------
+[[custom_plugins]]
+  repo = 'Shougo/deoplete.nvim'
+  merged = false

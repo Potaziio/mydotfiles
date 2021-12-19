@@ -26,6 +26,11 @@ function! myspacevim#before() abort
 
   let g:indentLine_char_list=['|', '¦', '┆', '┊']
 
+  let g:presence_log_level = "debug"
+
+  let g:syntastic_java_checkers = []
+
+  let g:OmniSharp_highlighting = 0
 endfunction 
 
 function! ConcealToggle()
@@ -37,10 +42,14 @@ function! ConcealToggle()
 endfunction
 
 function! myspacevim#after() abort
+  set tabstop=4
+  set shiftwidth=4
   map <leader>x :VsdContrast <CR>
-  nnoremap <F5> <C-[> :w <bar> :!sh run.compile <CR>
+  " nnoremap <F5> <C-[> :w <bar> :!sh run.compile <CR>
+  nnoremap <F5> <c-[> :wall <bar> :Gradle runClient <CR>
   "nnoremap <F5> :CMakeSelectTarget First_Game<CR>:CMakeSelectBuildType Debug<CR>:CMakeBuild First_Game<CR>:CMakeRun<CR>
   "nnoremap <F6> :CMakeSelectTarget First_Game<CR>:CMakeSelectBuildType Release<CR>:CMakeSelectBuild First_Game<CR>:CMakeRun<CR>
+  nnoremap <F6> <c-[> :wall <bar> :!javac *.java <CR>
   nnoremap <F7> :CMake <CR>
   
   nnoremap <leader>c :call ConcealToggle() <CR>
